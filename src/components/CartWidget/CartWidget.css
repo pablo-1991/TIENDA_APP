@@ -1,0 +1,6 @@
+.carritoLogo {
+    display: flex;
+    flex-direction: row;
+    padding: 1%;
+    font-size: 25px;
+}
