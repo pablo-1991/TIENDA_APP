@@ -1,10 +1,11 @@
 import "./ItemListContainer.css"
 
-export const ItemListContainer = ({ greeting }) => {
+
+
+export const ItemListContainer = () => {
     return (
         <>
             <div className="mainContainer">
-                {greeting}
             </div>
         </>
     )
