@@ -21,7 +21,6 @@ export const Count = ({stock, initial}) => {
         }
     };
 
-
     return (
         <>
             <div className="contador">
@@ -29,11 +28,10 @@ export const Count = ({stock, initial}) => {
                 <button onClick={disminuirCont}> - </button>
                 <button onClick={incrementarCont}>+</button>
                 <button onClick={borrarCont}>Borrar</button>
-                <button>Ver más</button>
+                <button>Detalles</button>
                 <button>Añadir al carrito</button>
                 <p>Stock: {stock} </p>
             </div>
         </>
     )
-
 }

@@ -1,17 +1,18 @@
 import "../ItemListCards/ItemListCards.css"
-import { Count } from "../ItemCount/ItemCount"
+import { Item } from "../Item/Item"
 
+export const ItemListCards = ({items}) => {
 
-
-export const ItemListCards = (prop) => {
-    return (<>
-        <div className="card">
-            <img src={prop.imagen} alt="producto" />
-            <h2>{prop.nombre}</h2>
-            <p>Precio: ${prop.precio}</p>
-            <Count stock="10" initial="1"/>
-        </div>
-    </>
+    return (
+        <>
+            <div className="mainContainer">
+                {items.map(elm => {
+                    return (
+                        <Item key={elm.id} nombre={elm.nombre} precio={elm.precio} imagen={elm.imagen} item={elm} />
+                    )
+                })
+                }
+            </div>
+        </>
     )
-
 }
