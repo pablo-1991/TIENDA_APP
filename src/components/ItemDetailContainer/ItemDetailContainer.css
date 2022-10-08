@@ -1,0 +1,6 @@
+.itemDetailContainer {
+    display: flex;
+    padding: 5%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.363), rgba(0, 0, 0, 0.418)),url("../../assets/bgdetail.jpg");
+}
+

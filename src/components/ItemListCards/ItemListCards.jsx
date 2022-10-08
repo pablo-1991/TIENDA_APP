@@ -1,7 +1,6 @@
-import "../ItemListCards/ItemListCards.css"
-import { Item } from "../Item/Item"
+import { Item } from "../Item/Item";
 
-export const ItemListCards = ({items}) => {
+export const ItemListCards = ({ items }) => {
 
     return (
         <>
