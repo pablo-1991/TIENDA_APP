@@ -1,6 +1,11 @@
 .carritoLogo {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     padding: 1%;
     font-size: 25px;
+    background-color: rgb(221, 198, 198);
+    border-radius: 10px;
+    color: brown;
+    width: 70px;
 }

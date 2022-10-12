@@ -6,8 +6,16 @@ export const CartWidget = () => {
         <>
             <div className="carritoLogo">
                 <img src={carritoLogo} alt="logoCarrito" />
-                <span>0</span>
+                <span> 0 </span>
             </div>
         </>
     )
+}
+
+/*------------------------------------CART----------------------------------*/
+
+export const Cart = () => {
+    return (<div>
+
+            </div>)
 }
