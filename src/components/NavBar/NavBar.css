@@ -39,6 +39,11 @@
     padding: 1%;
 }
 
+.links a:hover {
+    color: rgb(82, 71, 230);
+    transition: 0.3s;
+}
+
 a:link,
 a:visited {
     text-decoration: none;
@@ -50,7 +55,7 @@ a:active {
     color: brown;
 }
 
-/*-------------------------------------------CONTACTO----------------------------------------*/
+/*---------------------------------CONTACTO---------------------------------*/
 
 .contacto {
     display: flex;

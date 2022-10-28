@@ -19,12 +19,14 @@ export const NavBar = () => {
                         <NavLink to="/categoria/objetos"><li>OBJETOS</li></NavLink>
                         <Link to="/contacto"><li>CONTACTO</li></Link>
                     </ul>
-                    <CartWidget />
+                    <Link to="/cart"><CartWidget /></Link>
                 </div>
             </nav>
         </>
     )
 }
+
+/*-------------------------------CONTACTO---------------------------------*/
 
 export const Contacto = () => {
     return (

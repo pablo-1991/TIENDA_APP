@@ -1,0 +1,39 @@
+.formulario {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: auto;
+    width: 400px;
+    padding: 4em 3em;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px -5px rgb(0 0 0 / 30%);
+    text-align: center;
+}
+
+.formulario input {
+    width: 100%;
+    background: none;
+    color: gray;
+    font-size: 20px;
+    padding: 1%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid gray;
+}
+
+.formulario label {
+    color: black;
+    padding: 5%;
+    font-size: 25px;
+}
+
+.submit {
+    background-color: #3866f2;
+    color: white;
+    font-size: 20px;
+    font-weight: 300;
+    border: none;
+    border-radius: 1em;
+    padding: 2%;
+    margin-top: 10%;
+}

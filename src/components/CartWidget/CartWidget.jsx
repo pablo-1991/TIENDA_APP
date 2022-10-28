@@ -1,21 +1,17 @@
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import "./CartWidget.css";
 import carritoLogo from "../../assets/carritoLogo.png";
 
+
 export const CartWidget = () => {
+    const { productosTotal } = useContext(CartContext);
     return (
         <>
             <div className="carritoLogo">
                 <img src={carritoLogo} alt="logoCarrito" />
-                <span> 0 </span>
+                <span> {productosTotal()} </span>
             </div>
         </>
     )
-}
-
-/*------------------------------------CART----------------------------------*/
-
-export const Cart = () => {
-    return (<div>
-
-            </div>)
 }

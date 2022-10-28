@@ -2,39 +2,36 @@ import "./ItemListContainer.css";
 import { ItemListCards } from "../ItemListCards/ItemListCards";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { productos } from "../BaseDeDatos/BaseDeDatos";
+import { db } from "../../utils/firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 
 export const ItemListContainer = () => {
-
     const { categoriaID } = useParams();
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const [products, setProducts] = useState([])
-
-    const obtenerProductos = () => {
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(productos)
-            }, 2000);
-        })
-    }
-
-    useEffect(() => { obtenerProductos().then((result) => { setProducts(result) }) }, [])
 
     useEffect(() => {
-        obtenerProductos().then((result) => {
-            if (categoriaID) {
-                const prodFiltrados = result.filter(elm => elm.categoria === categoriaID);
-                setProducts(prodFiltrados)
-            }
-            else { setProducts(result) }
+        const queryRef = categoriaID ? query(collection(db, "productos"), where("categoria", "==", categoriaID)) : collection(db, "productos")
+        getDocs(queryRef).then((response) => {
+            const resultados = response.docs
+            const docs = resultados.map(doc => {
+                return {
+                    ...doc.data(),
+                    id: doc.id
+                }
+            })
+            setProducts(docs)
+            setLoading(false)
         })
-    }
-        , [categoriaID]);
+    }, [categoriaID])
 
     return (
         <div>
-            <ItemListCards items={products} />
+            {
+                loading ? <p><strong>CARGANDO...</strong></p> : <ItemListCards items={products} />
+            }
         </div>
     )
 }

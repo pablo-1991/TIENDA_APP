@@ -1,7 +1,10 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import "../ItemCount/ItemCount.css";
 
 export const ItemCount = ({ stock, initial, onAdd }) => {
+    const value = useContext(CartContext)
+
     const [contador, setContador] = useState(1);
 
     const incrementarCont = () => {
