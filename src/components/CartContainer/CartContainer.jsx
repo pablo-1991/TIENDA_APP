@@ -35,14 +35,20 @@ export const CartContainer = () => {
         addDoc(queryRef, compra).then((result) => setCompraID(result.id))
     }
 
-    return (<>
-        {compraID && Swal.fire("Muchas gracias por tu compra!", "Su compra fue realizada bajo el numero de orden de: " + compraID, "success") && <></>}
-
-        <>
-            {productosCarrito.length === 0 ? <div>Debe Agregar productos</div> :
+    {
+        if (productosCarrito === 0) {
+            return (
+                <p>no hay productos</p>
+            )
+        } else if (compraID) {
+            return (
+                Swal.fire("Muchas gracias por tu compra!", "Su compra fue realizada bajo el numero de orden de: " + compraID, "success") && <><p>Debe agregar productos</p></>)
+        }
+        else {
+            return (
                 <>
                     {productosCarrito.map((producto) => {
-                        return <div>
+                        return <div key={producto.id}>
                             <h3>{producto.nombre}</h3>
                             <p>Precio: ${producto.precio}</p>
                             <p>Cantidad: {producto.quantity}</p>
@@ -66,7 +72,8 @@ export const CartContainer = () => {
                             <button type="submit" className="submit" >Enviar</button>
                         </form>
                     </div>
-                </>}
-        </>
-    </>)
+                </>
+            )
+        }
+    }
 }
