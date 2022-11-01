@@ -3,7 +3,8 @@ import { ItemListCards } from "../ItemListCards/ItemListCards";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from "../../utils/firebase";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where, orderBy } from "firebase/firestore";
+import logoLoading from "../../assets/loading.gif"
 
 
 export const ItemListContainer = () => {
@@ -13,7 +14,7 @@ export const ItemListContainer = () => {
 
 
     useEffect(() => {
-        const queryRef = categoriaID ? query(collection(db, "productos"), where("categoria", "==", categoriaID)) : collection(db, "productos")
+        const queryRef = categoriaID ? query(collection(db, "productos"), where("categoria", "==", categoriaID)) : query(collection(db, "productos"), orderBy("categoria"))
         getDocs(queryRef).then((response) => {
             const resultados = response.docs
             const docs = resultados.map(doc => {
@@ -28,9 +29,10 @@ export const ItemListContainer = () => {
     }, [categoriaID])
 
     return (
-        <div>
+        <div className="loading">
             {
-                loading ? <p><strong>CARGANDO...</strong></p> : <ItemListCards items={products} />
+                loading ? <img src={logoLoading} alt="logo de loading" />
+                    : <ItemListCards items={products} />
             }
         </div>
     )
