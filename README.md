@@ -1,12 +1,14 @@
 # E-commerce Wulfric
 
+![](./src/assets/logofinal.png)
+
 Proyecto Final de React Js
 Es una tienda donde se pueden adquirir productos del mundo de Harry Potter, libros, varitas, objetos, etc.
 
 ## Librerias utilizadas en el proyecto:
 
--Firebase: Aloja la base de datos del proyecto, ademas de generar el dinamismo en la navegacion y categorias de productos.
--SweerAlert2: Utilizada para alertar al usuario que complete todos los datos del formulario para poder finalizar la compra, y alertar ademas si el mail ingresado no coincide.
+* Firebase: Aloja la base de datos del proyecto, ademas de generar el dinamismo en la navegacion y categorias de productos.
+* SweerAlert2: Utilizada para alertar al usuario que complete todos los datos del formulario para poder finalizar la compra, y alertar ademas si el mail ingresado no coincide.
 
 ## Funcionalidades:
 El usuario podrá:

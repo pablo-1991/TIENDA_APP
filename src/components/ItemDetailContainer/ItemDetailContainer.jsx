@@ -10,7 +10,6 @@ export const ItemDetailContainer = () => {
     const { id } = useParams();
     const [item, setItem] = useState({})
 
-
     useEffect(() => {
         const getData = async () => {
             const queryRef = doc(db, "productos", id)
@@ -26,7 +25,7 @@ export const ItemDetailContainer = () => {
 
     return (
         <div className="itemDetailContainer">
-            <ItemDetail item={item} />
+            { item ? <ItemDetail item={item} /> : <p>No existe el producto</p> }
         </div>
     )
 }
